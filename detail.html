@@ -17,13 +17,13 @@
   </style>
 </head>
 <body>
-  <header class="shell top"><a class="brand" href="index.html#top">Zemskov <span>Studio</span></a><a class="back" href="index.html#included">← Ко всем пунктам</a></header>
+  <header class="shell top"><a class="brand" href="index.html#top">Zemskov <span>Studio</span></a><a class="back" href="index.html#included"> Ко всем пунктам</a></header>
   <main class="shell">
     <section class="hero"><span class="kicker" id="kicker">04 / ЧТО ВХОДИТ В РАБОТУ</span><div class="hero-grid"><h1 class="title" id="title">Внимание<br>к целому.</h1><p class="summary" id="summary"></p></div><span class="hero-index" id="hero-index">01 — 05</span></section>
     <section class="content"><div class="index" id="index-label">01 / ЭТАП</div><div class="details"><h2 id="heading"></h2><p id="body-copy"></p><div class="facts"><article class="fact"><span>Что делаю</span><h3 id="fact-one-title"></h3><p id="fact-one-copy"></p></article><article class="fact"><span>Что получается</span><h3 id="fact-two-title"></h3><p id="fact-two-copy"></p></article></div></div></section>
-    <nav class="nav-bottom" aria-label="Другие пункты"><a id="previous" href="index.html#included">← Назад</a><a id="next" href="index.html#included">Следующий пункт →</a></nav>
+    <nav class="nav-bottom" aria-label="Другие пункты"><a id="previous" href="index.html#included"> Назад</a><a id="next" href="index.html#included">Следующий пункт </a></nav>
   </main>
-  <footer class="shell footer"><a class="brand" href="index.html#top">Zemskov <span>Studio</span></a><span>СМЫСЛ · СТРУКТУРА · ДИЗАЙН · ЗАПУСК</span><a href="index.html#contact">Обсудить проект ↗</a></footer>
+  <footer class="shell footer"><a class="brand" href="index.html#top">Zemskov <span>Studio</span></a><span>СМЫСЛ · СТРУКТУРА · ДИЗАЙН · ЗАПУСК</span><a href="index.html#contact">Обсудить проект </a></footer>
   <script>
     const items=[
       {id:'brief',label:'Погружение в задачу и аудиторию',summary:'Сначала разбираюсь, что именно нужно объяснить человеку и почему ему это важно.',heading:'Находим главное до того, как выбирать форму.',body:'Обсуждаем продукт, цели проекта, аудиторию и ограничения. Смотрю на материалы и задаю вопросы, которые помогают отличить ключевое от второстепенного. Это становится опорой для структуры и визуального направления.',oneTitle:'Контекст проекта',oneCopy:'Цели, продукт, аудитория, конкуренты и исходные материалы.',twoTitle:'Чёткая задача',twoCopy:'Зафиксированное понимание того, что сайт должен донести и к какому действию вести.'},
@@ -34,8 +34,11 @@
     ];
     const params=new URLSearchParams(location.search);let current=items.findIndex(item=>item.id===params.get('topic'));if(current<0)current=0;const item=items[current];
     document.title=`${item.label} — Zemskov Studio`;document.querySelector('#kicker').textContent=`04 / ЧТО ВХОДИТ В РАБОТУ`;document.querySelector('#title').innerHTML=item.label.replace(' и ',' и<br>');document.querySelector('#summary').textContent=item.summary;document.querySelector('#index-label').textContent=`${String(current+1).padStart(2,'0')} / ЭТАП`;document.querySelector('#heading').textContent=item.heading;document.querySelector('#body-copy').textContent=item.body;document.querySelector('#fact-one-title').textContent=item.oneTitle;document.querySelector('#fact-one-copy').textContent=item.oneCopy;document.querySelector('#fact-two-title').textContent=item.twoTitle;document.querySelector('#fact-two-copy').textContent=item.twoCopy;document.querySelector('#hero-index').textContent=`${String(current+1).padStart(2,'0')} — 05`;
-    const prev=items[(current+items.length-1)%items.length],next=items[(current+1)%items.length];document.querySelector('#previous').href=`detail.html?topic=${prev.id}`;document.querySelector('#previous').textContent=`← ${prev.label}`;document.querySelector('#next').href=`detail.html?topic=${next.id}`;document.querySelector('#next').textContent=`${next.label} →`;
+    const prev=items[(current+items.length-1)%items.length],next=items[(current+1)%items.length];document.querySelector('#previous').href=`detail.html?topic=${prev.id}`;document.querySelector('#previous').textContent=prev.label;document.querySelector('#next').href=`detail.html?topic=${next.id}`;document.querySelector('#next').textContent=next.label;
   </script>
 </body>
 </html>
+
+
+
 
